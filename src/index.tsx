@@ -116,6 +116,7 @@ const RgbColorPicker: React.FC<Props> = ({
   useEffect(() => {
     selectedBase.addListener(({ value }) => {
       const newBaseSlide = value / width;
+
       if (onBaseSlider) onBaseSlider(newBaseSlide);
       const newBase = getColor(newBaseSlide, COLORS);
       if (onBase) onBase(newBase);
@@ -149,14 +150,8 @@ const RgbColorPicker: React.FC<Props> = ({
   }, [base, width]);
 
   useEffect(() => {
-    if (width <= 0) return;
-    selectedBase.setValue(
-      initialBaseSlider ? initialBaseSlider * width : width * 0.5
-    );
-    selectedColor.setValue(
-      initialColorSlider ? initialColorSlider * width : width * 0
-    );
-  }, [width]);
+ 
+  }, []);
 
   const setWithinBounds = (val: Animated.Value, { x }: { x: number }) => {
     val.setValue(Math.max(Math.min(x, width), 0));
