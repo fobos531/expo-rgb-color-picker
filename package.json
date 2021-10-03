@@ -6,11 +6,8 @@
     "build": "tsc",
     "prepare": "yarn run build"
   },
-  "main": "dist/index.js",
+  "main": "src/index.tsx",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mpekala23/expo-rgb-color-picker.git"
